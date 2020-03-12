@@ -53,7 +53,7 @@ public class Main extends Sprite {
         addChild(textField);
 
         if(ACCOUNTS < CLASSES){
-            traceTF("not enough accounts");
+            traceTf("not enough accounts");
             return;
         }
 
@@ -61,11 +61,11 @@ public class Main extends Sprite {
             matrix.push(i);
         }
         writeMatrix(matrix);
-        //traceTF(minimumMatrix);
+        //traceTf(minimumMatrix);
         addEventListener(Event.ENTER_FRAME, onEnterFrame);
     }
 
-    private function traceTF(value:*, index:int = 0, arr:Array = null):void {
+    private function traceTf(value:*, index:int = 0, arr:Array = null):void {
         textField.appendText(value + "\n");
         textField.scrollV = textField.maxScrollV;
     }
@@ -75,32 +75,31 @@ public class Main extends Sprite {
         for (var i:int = 0;i<value[1].length;i++){
             s += CLASS_NAMES[i] + " - " + NAMES[value[1][i]] + " " + DATA[value[1][i]][i] + "\n";
         }
-        textField.appendText(s + "\n");
-        textField.scrollV = textField.maxScrollV;
+        traceTf(s);
     }
 
     private function onEnterFrame(event:Event):void {
         if (finished) {
             removeEventListener(Event.ENTER_FRAME, onEnterFrame);
-            traceTF(">>>Minimum Total Score: " + minimumTotalScore);
+            traceTf(">>>Minimum Total Score: " + minimumTotalScore);
             minimumTotalMatrix = minimumTotalMatrix.splice(minimumTotalMatrix.length - 10, 10);
             minimumTotalMatrix.reverse();
             minimumTotalMatrix.forEach(fullTrace);
-            traceTF(">>>Maximum Class Score: " + maximumClassScore);
+            traceTf(">>>Maximum Class Score: " + maximumClassScore);
             maximumClassMatrix = maximumClassMatrix.splice(maximumClassMatrix.length - 10, 10);
             maximumClassMatrix.reverse();
             maximumClassMatrix.forEach(fullTrace);
             var currentTime:int = getTimer();
-            traceTF("Time: " + (currentTime - startTime) * 0.001);
+            traceTf("Time: " + (currentTime - startTime) * 0.001);
         } else if (!working) {
             working = true;
             for (var i:int = 0; i < 100000; i++) {
                 if (finished) break;
                 matrix = tick2(matrix);
-                //traceTF(matrix.slice(0, VALUES));
+                //traceTf(matrix.slice(0, VALUES));
                 writeMatrix(matrix);
             }
-            traceTF(matrix.slice(0, CLASSES));
+            traceTf(matrix.slice(0, CLASSES));
             working = false;
         }
     }
@@ -131,7 +130,7 @@ public class Main extends Sprite {
             maximumClassScore = maxDustInMatrix;
             maximumClassMatrix.push([totalDust, value.slice(0, CLASSES), maxDustInMatrix, value.slice(CLASSES)]);
         }
-        //traceTF(result + " \ " + value.slice(0, VALUES) + " \ " + value);
+        //traceTf(result + " \ " + value.slice(0, VALUES) + " \ " + value);
         return;
     }
 
