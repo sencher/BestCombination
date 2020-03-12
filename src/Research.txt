@@ -1,0 +1,95 @@
+20220,33200,29140,33200,55000,73020,46700,26140,38100
+41580,53520,33960,53820,54220,74420,41040,31280,55560
+35820,55460,28380,43080,54100,58020,49100,27360,42880
+46600,69120,35820,58760,69820,90420,55560,38820,63120
+42160,63700,35880,56940,60320,75580,51840,36620,60680
+44940,63980,34420,56740,63840,82680,49700,40120,60540
+46000,60280,33840,59220,61880,88280,55320,38840,63420
+41580,52200,38300,53960,58180,83940,53120,35000,55640
+48100,66540,40100,60720,67320,73760,49860,38420,62640
+49980,64600,39940,63340,67500,92160,57400,37860,67680
+47060,65960,39380,57700,59780,83500,56380,39160,64600
+
+
+123 arrange all
+132	last with prev (last > prev)
+213	no moves, increase first + arrange others
+231 last with prev
+312 no moves, increase first + arrange others
+321 last with prev
+
+1234	arrange all
+1243	last with prev
+1324	4>2 on 2, increse 2 to 3, arrange others
+1342	last with prev
+1423	no moves, increase second + arrange others
+1432	last with prev
+
+2134	no moves, increase first + arrange others
+2143	last with prev (last > prev)
+2314	no last > prev, increase second(skip 2) + arrange others
+2341	last with prev (last > prev)
+2413	no last > prev, increase second(skip 2) + arrange others
+2431	last with prev (last > prev)
+
+3124	second is max, increase first + arr
+3142	last with prev (last > prev)
+3214	no last > prev, increase second(skip 3) + arrange others	
+3241	last with prev (last > prev)
+3412	no last > prev, increase second(skip 3) + arrange others
+3421	last with prev (last > prev)
+
+4123	second is max, increase first + arr
+4132	last with prev (last > prev)
+4213	no last > prev, increase second(skip first) + arrange others
+4231	last with prev (last > prev)
+4312	no last > prev, increase second(skip first) + arrange others
+4321	last with prev (last > prev)
+		second is max-1 = END
+
+
+1	1
+2	1*2=2
+3	1*2*3=6
+4	1*2*3*4=24
+5	1*2*3*4*5=120
+
+
+2 from 3
+
+12 arrange all
+13 increase last
+21 last max, incr prev + arr
+23 increase last, skip first
+31 last max, incr prev + arr
+32 increase last
+
+3 from 4
+
+123 arrange all
+124 increase last
+132 last max, incr prev + arr
+134 increase last, skip all previous
+142 last max, incr prev + arr
+143 increase last, skip all previous
+
+213 second is max, increase first + arr
+214 increase last, skip all previous
+231 last max, incr prev + arr
+234 increase last, skip all previous
+241 last max, incr prev + arr
+243 increase last, skip all previous
+
+312 second is max, increase first + arr
+314 increase last, skip all previous
+321 last max, incr prev + arr
+324 increase last, skip all previous
+341 last max, incr prev + arr
+342 increase last, skip all previous
+
+412 second is max, increase first + arr
+413 increase last, skip all previous
+421 last max, incr prev + arr
+423 increase last, skip all previous
+431 last max, incr prev + arr
+432 increase last, skip all previous

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="PARALLEL_COMPILATION" value="true" />
+    <option name="COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Didea.connection.timeout=60000000" />
+  </component>
+  <component name="ProjectId" id="1YK6uJFYrqhu7QC1uYg4aKgvSwM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="JDK_11.0.4+10" />
+    <property name="last_opened_file_path" value="A:/FlexSDK/flashplayer_32_sa_debug.exe" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BestCombination" type="FlashRunConfigurationType">
+      <option name="BCName" value="BestCombination" />
+      <option name="IOSSimulatorDevice" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="clearAppDataOnEachLaunch" value="true" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="Player" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="A:/FlexSDK/flashplayer_32_sa_debug.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="BestCombination" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>D:\Users\Zver\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="" />
+      <created>1582679161606</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582679161606</updated>
+      <workItem from="1582679175110" duration="693000" />
+      <workItem from="1582680053542" duration="89000" />
+      <workItem from="1582680389292" duration="17000" />
+      <workItem from="1582680451427" duration="448000" />
+      <workItem from="1582681269828" duration="9230000" />
+      <workItem from="1582691314200" duration="420000" />
+      <workItem from="1582692186064" duration="17316000" />
+      <workItem from="1582828203261" duration="4627000" />
+      <workItem from="1582837235727" duration="590000" />
+      <workItem from="1582855312415" duration="5938000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="828" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582699336962">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="828" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582699336962" />
+    <state x="1317" y="228" key="#xdebugger.evaluate" timestamp="1582855747555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1317" y="228" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582855747555" />
+    <state width="465" height="466" key="DebuggerActiveHint" timestamp="1582857068474">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="465" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582857068474" />
+    <state x="1154" y="237" key="DetectedRootsChooserDialog" timestamp="1582682597832">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1154" y="237" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582682597832" />
+    <state x="921" y="276" key="FileChooserDialogImpl" timestamp="1582699322475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="921" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582699322475" />
+    <state width="914" height="344" key="GridCell.Tab.-1.bottom" timestamp="1582684416043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.-1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
+    <state width="914" height="344" key="GridCell.Tab.-1.center" timestamp="1582684416043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.-1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
+    <state width="914" height="344" key="GridCell.Tab.-1.left" timestamp="1582684416043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.-1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
+    <state width="914" height="344" key="GridCell.Tab.-1.right" timestamp="1582684416043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
+    <state width="871" height="344" key="GridCell.Tab.0.bottom" timestamp="1582861469842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="871" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
+    <state width="871" height="344" key="GridCell.Tab.0.center" timestamp="1582861469842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="871" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
+    <state width="871" height="344" key="GridCell.Tab.0.left" timestamp="1582861469841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="871" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469841" />
+    <state width="871" height="344" key="GridCell.Tab.0.right" timestamp="1582861469842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="871" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
+    <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1582684413820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582684413820" />
+    <state width="914" height="344" key="GridCell.Tab.1.center" timestamp="1582684413820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582684413820" />
+    <state width="914" height="344" key="GridCell.Tab.1.left" timestamp="1582684413820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582684413820" />
+    <state width="914" height="344" key="GridCell.Tab.1.right" timestamp="1582684413820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684413820" />
+    <state x="1067" y="223" key="NewModule_or_Project.wizard" timestamp="1582682331404">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1067" y="223" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582682331404" />
+    <state x="880" y="96" key="SettingsEditor" timestamp="1582703176195">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="96" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582703176195" />
+    <state x="1147" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582679179427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1147" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582679179426" />
+    <state x="1213" y="431" key="com.intellij.javascript.flex.refactoring.moveClass.FlexMoveClassDialog" timestamp="1582711141306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1213" y="431" key="com.intellij.javascript.flex.refactoring.moveClass.FlexMoveClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582711141306" />
+    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog" timestamp="1582682417967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582682417967" />
+    <state width="484" height="387" key="javadoc.popup.new" timestamp="1582861089098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="484" height="387" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1582861089098" />
+    <state x="685" y="145" key="new project wizard" timestamp="1582682253470">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="145" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582682253470" />
+    <state x="1074" y="229" key="search.everywhere.popup" timestamp="1582693778360">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1074" y="229" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582693778360" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="FlashRunConfigurationType">
+        <watch expression="matrix" />
+        <watch expression="value[i]" />
+        <watch expression="DATA[value[i]][i]" />
+        <watch expression="DATA[value[i]]" />
+        <watch expression="minimumMatrix" />
+        <watch expression="working" />
+        <watch expression="finished" />
+        <watch expression="value[i]][i]" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
