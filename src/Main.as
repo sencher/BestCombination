@@ -6,12 +6,14 @@ import flash.text.TextField;
 import flash.text.TextFormat;
 import flash.utils.getTimer;
 
-[SWF(height=900, width=900)]
+import mx.utils.ObjectUtil;
+
+[SWF(height=900, width=1200)]
 public class Main extends Sprite {
-    private const MAXIMUM_DUST:int = 75; // * 1000
     private const ACCOUNTS:int = 11;
     private const CLASSES:int = 10;
-    private const DATA:Array = [
+    private const MAXIMUM_DUST:int = int.MAX_VALUE;
+    private var data:Array = [
         [18.8, 27.44, 17.3, 38.8, 2.82, 39.74, 27.6, 7.76, 59.56, 10.68],
         [21.54, 31.82, 15.7, 39.88, 5.04, 37.36, 23.32, 5.66, 64.7, 15.26],
         [20, 30.46, 17.6, 37.66, 3.98, 44.24, 23.92, 5.06, 58.68, 12.96],
@@ -28,6 +30,8 @@ public class Main extends Sprite {
     private const NAMES:Array = ["БрызгиПоноса", "AnaISurprise", "ЖидкийГаз", "Berlinetta", "Dominating", "RageQuit",
         "FukinAwesome", "MegaBoobs", "YoungInWound", "MissedLethal", "KissMyAxe"];
     private const CLASS_NAMES:Array = ["Demon", "Druid", "Hunter", "Mage", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
+    private const LEFT:int = 0;
+    private const RIGHT:int = 1;
     private var matrix:Array = [];
     private var working:Boolean;
 
@@ -37,26 +41,43 @@ public class Main extends Sprite {
     private var maximumClassMatrix:Array = [];
     private var finished:Boolean;
     private var startTime:int;
-    private var textField:TextField;
+    private var textFieldLeft:TextField;
+    private var textFieldRight:TextField;
 
     public function Main() {
         startTime = getTimer();
         var textFormat:TextFormat = new TextFormat();
         textFormat.size = 20;
-        textField = new TextField();
-        textField.setTextFormat(textFormat);
-        textField.defaultTextFormat = textFormat;
-        textField.wordWrap = true;
-        textField.width = stage.stageWidth;
-        textField.height = stage.stageHeight;
-        addChild(textField);
+        textFieldLeft = new TextField();
+        textFieldLeft.setTextFormat(textFormat);
+        textFieldLeft.defaultTextFormat = textFormat;
+        textFieldLeft.wordWrap = true;
+        textFieldLeft.width = stage.stageWidth/2;
+        textFieldLeft.height = stage.stageHeight;
+        addChild(textFieldLeft);
+        stage.focus = textFieldLeft;
+
+        textFieldRight = new TextField();
+        textFieldRight.setTextFormat(textFormat);
+        textFieldRight.defaultTextFormat = textFormat;
+        textFieldRight.wordWrap = true;
+        textFieldRight.width = stage.stageWidth/2;
+        textFieldRight.height = stage.stageHeight;
+        textFieldRight.x = stage.stageWidth/2;
+        addChild(textFieldRight);
+
+        for (var i:int = 0; i < data.length; i++) {
+            for (var j:int = 0; j < data[i].length; j++) {
+                data[i][j] = Math.round(data[i][j] * 1000);
+            }
+        }
 
         if (ACCOUNTS < CLASSES) {
             traceTf("not enough accounts");
             return;
         }
 
-        for (var i:int = 0; i < ACCOUNTS; i++) {
+        for (i = 0; i < ACCOUNTS; i++) {
             matrix.push(i);
         }
         writeMatrix(matrix);
@@ -64,15 +85,20 @@ public class Main extends Sprite {
         addEventListener(Event.ENTER_FRAME, onEnterFrame);
     }
 
-    private function traceTf(value:*, index:int = 0, arr:Array = null):void {
-        textField.appendText(value + "\n");
-        textField.scrollV = textField.maxScrollV;
+    private function traceTf(value:*, position:int = LEFT):void {
+        if(position == LEFT) {
+            textFieldLeft.appendText(value + "\n");
+            textFieldLeft.scrollV = textFieldLeft.maxScrollV;
+        }else{
+            textFieldRight.appendText(value + "\n");
+            textFieldRight.scrollV = textFieldRight.maxScrollV;
+        }
     }
 
     private function fullTrace(value:*, index:int = 0, arr:Array = null):void {
         var s:String = value[0] + "/" + value[2] + " - " + value[1] + "/" + value[3] + "\n";
         for (var i:int = 0; i < value[1].length; i++) {
-            s += CLASS_NAMES[i] + " - " + NAMES[value[1][i]] + " " + DATA[value[1][i]][i] + "\n";
+            s += CLASS_NAMES[i] + " - " + NAMES[value[1][i]] + " " + data[value[1][i]][i] + "\n";
         }
         traceTf(s);
     }
@@ -88,14 +114,16 @@ public class Main extends Sprite {
             maximumClassMatrix = maximumClassMatrix.splice(maximumClassMatrix.length - 10, 10);
             maximumClassMatrix.reverse();
             maximumClassMatrix.forEach(fullTrace);
-            var currentTime:int = getTimer();
-            traceTf("Time: " + (currentTime - startTime) * 0.001);
+            traceTf("Time: " + (getTimer() - startTime) * 0.001);
         } else if (!working) {
             working = true;
-            for (var i:int = 0; i < 100000; i++) {
+            for (var i:int = 0; i < 1000000; i++) {
                 if (finished) break;
-                matrix = tick2(matrix);
-                //traceTf(matrix.slice(0, VALUES));
+                matrix = tick(matrix);
+//                if(ObjectUtil.compare(matrix,[9,5,6,2,7,4,8,1,0,3,10])==0){//10,5,6,2,7,4,8,1,0,3/9
+//                    trace("dfsdfsdsfds");
+//                }
+                if(i<20) traceTf(matrix);
                 writeMatrix(matrix);
             }
             traceTf(matrix.slice(0, CLASSES));
@@ -110,10 +138,10 @@ public class Main extends Sprite {
         var maxDustInMatrix:Number = 0;
 
         for (var i:int = 0; i < CLASSES; i++) {
-            if (DATA[value[i]][i] < MAXIMUM_DUST) {
-                totalDust += DATA[value[i]][i];
-                if (maxDustInMatrix < DATA[value[i]][i]) {
-                    maxDustInMatrix = DATA[value[i]][i];
+            if (data[value[i]][i] < MAXIMUM_DUST) {
+                totalDust += data[value[i]][i];
+                if (maxDustInMatrix < data[value[i]][i]) {
+                    maxDustInMatrix = data[value[i]][i];
                 }
             } else {
                 //more than maximum = ignore
@@ -132,7 +160,7 @@ public class Main extends Sprite {
         //traceTf(result + " \ " + value.slice(0, VALUES) + " \ " + value);
     }
 
-    private function tick2(array:Array, depth:int = 3):Array {
+    private function tick(array:Array, depth:int = 3):Array {
         //last with previous
         if (array[array.length - 1] > array[array.length - 2]) {
             var temp:int = array[array.length - 2];
@@ -140,14 +168,14 @@ public class Main extends Sprite {
             array[array.length - 1] = temp;
         } else {
             var tmpArr:Array = array.splice(array.length - depth, depth);
-            var sortedArr:Array = tmpArr.concat().sort();
+            var sortedArr:Array = tmpArr.concat().sort(Array.NUMERIC);
             var result:Array = sortedArr.splice(sortedArr.indexOf(tmpArr[0]) + 1, 1);
             if (!result.length) {
                 if (!array.length) {
                     finished = true;
                     return array;//???
                 } else {
-                    return tick2(array.concat(tmpArr), ++depth);
+                    return tick(array.concat(tmpArr), ++depth);
                 }
             }
             return array.concat(result, sortedArr);

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="" />
+    <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="Demon Hunter Update">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BestCombination.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BestCombination.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.as" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.as" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +18,9 @@
     <option name="PARALLEL_COMPILATION" value="true" />
     <option name="COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Didea.connection.timeout=60000000" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YK6uJFYrqhu7QC1uYg4aKgvSwM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,10 +29,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="JDK_11.0.4+10" />
-    <property name="last_opened_file_path" value="A:/FlexSDK/flashplayer_32_sa_debug.exe" />
+    <property name="last_opened_file_path" value="D:/Program Files/Adobe/Adobe Animate 2020/Common/Configuration/ActionScript 3.0" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -102,13 +113,32 @@
       <workItem from="1582828203261" duration="4627000" />
       <workItem from="1582837235727" duration="590000" />
       <workItem from="1582855312415" duration="5938000" />
+      <workItem from="1586918749871" duration="1896000" />
+      <workItem from="1586949383748" duration="16662000" />
     </task>
+    <task id="LOCAL-00001" summary="Demon Hunter Update&#10;Code Style">
+      <created>1586920609480</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586920609480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Demon Hunter Update" />
+    <MESSAGE value="Demon Hunter Update&#10;Code Style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Demon Hunter Update&#10;Code Style" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="180" key="#Notifications" timestamp="1586975143348">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="180" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1586975143348" />
     <state x="828" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582699336962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -117,18 +147,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1317" y="228" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582855747555" />
+    <state x="1077" y="121" key="CommitChangelistDialog2" timestamp="1586920607187">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1077" y="121" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586920607187" />
     <state width="465" height="466" key="DebuggerActiveHint" timestamp="1582857068474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="465" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582857068474" />
-    <state x="1154" y="237" key="DetectedRootsChooserDialog" timestamp="1582682597832">
+    <state x="1154" y="237" key="DetectedRootsChooserDialog" timestamp="1586951243850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1154" y="237" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582682597832" />
-    <state x="921" y="276" key="FileChooserDialogImpl" timestamp="1582699322475">
+    <state x="1154" y="237" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586951243850" />
+    <state x="921" y="276" key="FileChooserDialogImpl" timestamp="1586951226576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="921" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582699322475" />
+    <state x="921" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586951226576" />
     <state width="914" height="344" key="GridCell.Tab.-1.bottom" timestamp="1582684416043">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -145,22 +179,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="344" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
-    <state width="871" height="344" key="GridCell.Tab.0.bottom" timestamp="1582861469842">
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1586974481102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="871" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
-    <state width="871" height="344" key="GridCell.Tab.0.center" timestamp="1582861469842">
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
+    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1586974481102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="871" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
-    <state width="871" height="344" key="GridCell.Tab.0.left" timestamp="1582861469841">
+    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
+    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1586974481102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="871" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469841" />
-    <state width="871" height="344" key="GridCell.Tab.0.right" timestamp="1582861469842">
+    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1586974481102">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="871" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582861469842" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
     <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1582684413820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,14 +211,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684413820" />
+    <state x="1019" y="268" key="IDE.errors.dialog" timestamp="1586919057889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1019" y="268" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586919057889" />
     <state x="1067" y="223" key="NewModule_or_Project.wizard" timestamp="1582682331404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1067" y="223" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582682331404" />
-    <state x="880" y="96" key="SettingsEditor" timestamp="1582703176195">
+    <state x="417" y="105" key="SettingsEditor" timestamp="1586969613842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="880" y="96" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582703176195" />
+    <state x="417" y="105" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586969613842" />
+    <state x="1031" y="258" key="Vcs.Push.Dialog.v2" timestamp="1586920619665">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1031" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586920619665" />
     <state x="1147" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582679179427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -193,14 +235,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1213" y="431" key="com.intellij.javascript.flex.refactoring.moveClass.FlexMoveClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582711141306" />
-    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog" timestamp="1582682417967">
+    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog" timestamp="1586951246223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582682417967" />
-    <state width="484" height="387" key="javadoc.popup.new" timestamp="1582861089098">
+    <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586951246223" />
+    <state width="756" height="433" key="javadoc.popup.new" timestamp="1586974757799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="484" height="387" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1582861089098" />
+    <state width="756" height="433" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1586974757799" />
     <state x="685" y="145" key="new project wizard" timestamp="1582682253470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -213,14 +255,13 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="FlashRunConfigurationType">
-        <watch expression="matrix" />
-        <watch expression="value[i]" />
-        <watch expression="DATA[value[i]][i]" />
-        <watch expression="DATA[value[i]]" />
-        <watch expression="minimumMatrix" />
-        <watch expression="working" />
-        <watch expression="finished" />
-        <watch expression="value[i]][i]" />
+        <watch expression="this.matrix" />
+        <watch expression="tmpArr" />
+        <watch expression="sortedArr" />
+        <watch expression="result" />
+        <watch expression="this.matrix[&quot;8&quot;]" />
+        <watch expression="this.matrix[&quot;9&quot;]" />
+        <watch expression="this.matrix[&quot;10&quot;]" />
       </configuration>
     </watches-manager>
   </component>
