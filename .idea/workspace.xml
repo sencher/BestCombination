@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="Demon Hunter Update">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Combination.as" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BestCombination.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BestCombination.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.as" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.as" afterDir="false" />
     </list>
@@ -18,10 +16,20 @@
     <option name="PARALLEL_COMPILATION" value="true" />
     <option name="COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Didea.connection.timeout=60000000" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="ActionScript Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YK6uJFYrqhu7QC1uYg4aKgvSwM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -39,6 +47,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="BestCombination" type="FlashRunConfigurationType">
@@ -114,7 +127,7 @@
       <workItem from="1582837235727" duration="590000" />
       <workItem from="1582855312415" duration="5938000" />
       <workItem from="1586918749871" duration="1896000" />
-      <workItem from="1586949383748" duration="16662000" />
+      <workItem from="1586949383748" duration="20967000" />
     </task>
     <task id="LOCAL-00001" summary="Demon Hunter Update&#10;Code Style">
       <created>1586920609480</created>
@@ -123,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586920609480</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed bug with string sort">
+      <created>1586975682139</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586975682139</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +152,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Demon Hunter Update" />
     <MESSAGE value="Demon Hunter Update&#10;Code Style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Demon Hunter Update&#10;Code Style" />
+    <MESSAGE value="Fixed bug with string sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with string sort" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="180" key="#Notifications" timestamp="1586975143348">
@@ -143,18 +164,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="828" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582699336962" />
+    <state x="765" y="238" key="#com.intellij.ide.util.MemberChooser" timestamp="1586976596609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586976596609" />
     <state x="1317" y="228" key="#xdebugger.evaluate" timestamp="1582855747555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1317" y="228" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582855747555" />
-    <state x="1077" y="121" key="CommitChangelistDialog2" timestamp="1586920607187">
+    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2" timestamp="1586975671397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1077" y="121" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586920607187" />
-    <state width="465" height="466" key="DebuggerActiveHint" timestamp="1582857068474">
+    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586975671397" />
+    <state width="587" height="466" key="DebuggerActiveHint" timestamp="1586977424938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="465" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1582857068474" />
+    <state width="587" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586977424938" />
     <state x="1154" y="237" key="DetectedRootsChooserDialog" timestamp="1586951243850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -179,22 +204,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="344" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1586974481102">
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1586979343148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
-    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1586974481102">
+    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343148" />
+    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1586979343147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
-    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1586974481102">
+    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343147" />
+    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1586979343147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
-    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1586974481102">
+    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343147" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1586979343148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586974481102" />
+    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343148" />
     <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1582684413820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -223,6 +248,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="417" y="105" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586969613842" />
+    <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1586976545511">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1586976545511" />
     <state x="1031" y="258" key="Vcs.Push.Dialog.v2" timestamp="1586920619665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -239,10 +268,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586951246223" />
-    <state width="756" height="433" key="javadoc.popup.new" timestamp="1586974757799">
+    <state width="756" height="433" key="javadoc.popup.new" timestamp="1586977983982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="756" height="433" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1586974757799" />
+    <state width="756" height="433" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1586977983982" />
     <state x="685" y="145" key="new project wizard" timestamp="1582682253470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,12 +285,10 @@
     <watches-manager>
       <configuration name="FlashRunConfigurationType">
         <watch expression="this.matrix" />
-        <watch expression="tmpArr" />
-        <watch expression="sortedArr" />
-        <watch expression="result" />
-        <watch expression="this.matrix[&quot;8&quot;]" />
-        <watch expression="this.matrix[&quot;9&quot;]" />
-        <watch expression="this.matrix[&quot;10&quot;]" />
+        <watch expression="this.maximumClassMatrix" />
+        <watch expression="this.minimumTotalMatrix" />
+        <watch expression="this.minimumTotalMatrix[&quot;0&quot;].matrix" />
+        <watch expression="this.minimumTotalMatrix[&quot;2&quot;].matrix" />
       </configuration>
     </watches-manager>
   </component>
