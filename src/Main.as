@@ -10,9 +10,21 @@ import utils.Utils;
 
 [SWF(height=900, width=1200)]
 public class Main extends Sprite {
-    private const ACCOUNTS:int = 7;
-    public static const CLASSES:int = 4;
+    public static const NAMES:Array = ["БрызгиПоноса", "AnaISurprise", "ЖидкийГаз", "Berlinetta", "Dominating", "RageQuit",
+        "FukinAwesome", "MegaBoobs", "YoungInWound", "MissedLethal", "KissMyAxe"];
+    public static const CLASS_NAMES:Array = ["Demon", "Druid", "Hunter", "Mage", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
+
+    public static const CLASSES:int = 10;
+
+    private const ACCOUNTS:int = 11;
+    private const VECTOR_LIMIT:uint = 7;
+    private const ITERATIONS_PER_FRAME:uint = 10000;
+
     private const MAXIMUM_DUST:int = int.MAX_VALUE;
+    private const LEFT:int = 0;
+    private const CENTER:int = 1;
+    private const RIGHT:int = 2;
+
     public static var data:Array = [
         [18.8, 27.44, 17.3, 38.8, 2.82, 39.74, 27.6, 7.76, 59.56, 10.68],
         [21.54, 31.82, 15.7, 39.88, 5.04, 37.36, 23.32, 5.66, 64.7, 15.26],
@@ -27,12 +39,17 @@ public class Main extends Sprite {
         [23.06, 36.8, 19.44, 56.58, 6.52, 48.5, 30.32, 13.86, 87.08, 19.5]
     ];
 
-    public static const NAMES:Array = ["БрызгиПоноса", "AnaISurprise", "ЖидкийГаз", "Berlinetta", "Dominating", "RageQuit",
-        "FukinAwesome", "MegaBoobs", "YoungInWound", "MissedLethal", "KissMyAxe"];
-    public static const CLASS_NAMES:Array = ["Demon", "Druid", "Hunter", "Mage", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
-    private const LEFT:int = 0;
-    private const CENTER:int = 1;
-    private const RIGHT:int = 2;
+//    public static var data:Array = [
+//        [4, 3, 2, 3, 4, 3, 4, 2],
+//        [1, 3, 1, 5, 1, 2, 1, 4],
+//        [0, 1, 9, 1, 2, 1, 7, 1],
+//        [1, 0, 1, 4, 1, 0, 1, 0],
+//        [0, 1, 2, 1, 2, 1, 2, 1],
+//        [1, 4, 1, 0, 1, 2, 1, 3],
+//        [6, 1, 0, 1, 7, 1, 4, 1],
+//        [1, 2, 1, 7, 1, 0, 1, 3]
+//    ];
+
     private var matrix:Array = [];
     private var working:Boolean;
 
@@ -43,7 +60,7 @@ public class Main extends Sprite {
     private var textFieldLeft:TextField;
     private var textFieldCenter:TextField;
     private var textFieldRight:TextField;
-    private const VECTOR_LIMIT:uint = 7;
+    private var depth:int;
 
     public function Main() {
         startTime = getTimer();
@@ -76,6 +93,9 @@ public class Main extends Sprite {
         textFieldRight.x = stage.stageWidth * 0.8;
         addChild(textFieldRight);
 
+        depth = 1 + ACCOUNTS - CLASSES;
+        if (depth < 2) depth = 2;
+
         for (var i:int = 0; i < data.length; i++) {
             for (var j:int = 0; j < data[i].length; j++) {
                 data[i][j] = Math.round(data[i][j] * 1000);
@@ -90,7 +110,7 @@ public class Main extends Sprite {
         for (i = 0; i < ACCOUNTS; i++) {
             matrix.push(i);
         }
-        writeMatrix(matrix);
+        tryWriteMatrix(matrix);
         addEventListener(Event.ENTER_FRAME, onEnterFrame);
     }
 
@@ -126,22 +146,24 @@ public class Main extends Sprite {
             traceTf("Time: " + (getTimer() - startTime) * 0.001);
         } else if (!working) {
             working = true;
-            for (var i:int = 0; i < 100000; i++) {
-                if (finished) break;
-                matrix = tick(matrix);
-//                if(ObjectUtil.compare(matrix,[9,5,6,2,7,4,8,1,0,3,10])==0){//10,5,6,2,7,4,8,1,0,3/9
-//                    trace("dfsdfsdsfds");
-//                }
-
-                //if (i < 20) traceTf(matrix);
-                writeMatrix(matrix);
+            try {
+                for (var i:int = 0; i < ITERATIONS_PER_FRAME; i++) {
+                    if (finished) break;
+                    matrix = tick(matrix, depth);
+//                    traceTf(matrix);
+                    tryWriteMatrix(matrix);
+                }
+            } catch (e:Error) {
+                traceTf("15>>>> " + matrix, CENTER);
+            } finally {
+                tryWriteMatrix(matrix);
+                traceTf(matrix.slice(0, CLASSES));
+                working = false;
             }
-            traceTf(matrix.slice(0, CLASSES));
-            working = false;
         }
     }
 
-    private function writeMatrix(value:Array):void {
+    private function tryWriteMatrix(value:Array):void {
         if (!value.length) return;
 
         var newCombTotalDust:int = 0;
@@ -160,22 +182,22 @@ public class Main extends Sprite {
         }
 
         if (
-            !minimumTotalDustVector.length ||
-            (newCombTotalDust < minimumTotalDustVector[0].totalDust) ||
-            ( newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust < minimumTotalDustVector[0].maxClassDust)
+                !minimumTotalDustVector.length ||
+                (newCombTotalDust < minimumTotalDustVector[0].totalDust) ||
+                (newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust < minimumTotalDustVector[0].maxClassDust)
         ) {
-            if(minimumTotalDustVector.length >= VECTOR_LIMIT){
+            if (minimumTotalDustVector.length >= VECTOR_LIMIT) {
                 minimumTotalDustVector.pop();
             }
             minimumTotalDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
         }
 
         if (
-            !maximumClassDustVector.length ||
-            (newCombMaxClassDust < maximumClassDustVector[0].maxClassDust) ||
-            ( newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust < maximumClassDustVector[0].totalDust)
+                !maximumClassDustVector.length ||
+                (newCombMaxClassDust < maximumClassDustVector[0].maxClassDust) ||
+                (newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust < maximumClassDustVector[0].totalDust)
         ) {
-            if(maximumClassDustVector.length >= VECTOR_LIMIT){
+            if (maximumClassDustVector.length >= VECTOR_LIMIT) {
                 maximumClassDustVector.pop();
             }
             maximumClassDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
@@ -192,27 +214,19 @@ public class Main extends Sprite {
         vector.push(pretender);
     }
 
-    private function tick(array:Array, depth:int = 3):Array {
-        //last with previous
-        if (array[array.length - 1] > array[array.length - 2]) {
-            var temp:int = array[array.length - 2];
-            array[array.length - 2] = array[array.length - 1];
-            array[array.length - 1] = temp;
-        } else {
-            var workArray:Array = array.splice(array.length - depth, depth);
-            var sortedWork:Array = workArray.concat().sort(Array.NUMERIC);
-            var result:Array = sortedWork.splice(sortedWork.indexOf(workArray[0]) + 1, 1);
-            if (!result.length) {
-                if (!array.length) {
-                    finished = true;
-                    return array;
-                } else {
-                    return tick(array.concat(workArray), ++depth);
-                }
+    private function tick(array:Array, depth:int = 2):Array {
+        var workArray:Array = array.splice(array.length - depth, depth);
+        var sortedWork:Array = workArray.concat().sort(Array.NUMERIC);
+        var result:Array = sortedWork.splice(sortedWork.indexOf(workArray[0]) + 1, 1);
+        if (!result.length) {
+            if (!array.length) {
+                finished = true;
+                return array;
+            } else {
+                return tick(array.concat(workArray), ++depth);
             }
-            return array.concat(result, sortedWork);
         }
-        return array;
+        return array.concat(result, sortedWork);
     }
 
 //    private function minimumTotalDustSort(a:Combination, b:Combination):Number {
