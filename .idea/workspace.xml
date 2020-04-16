@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="811e9158-fc9e-4911-bf2d-bafd2872d250" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Combination.as" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BestCombination.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BestCombination.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BestCombination/Main.swf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Combination.as" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combination.as" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.as" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.as" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Research.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Research.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +129,9 @@
       <workItem from="1582837235727" duration="590000" />
       <workItem from="1582855312415" duration="5938000" />
       <workItem from="1586918749871" duration="1896000" />
-      <workItem from="1586949383748" duration="20967000" />
+      <workItem from="1586949383748" duration="24509000" />
+      <workItem from="1586995348463" duration="2605000" />
+      <workItem from="1586999071903" duration="4073000" />
     </task>
     <task id="LOCAL-00001" summary="Demon Hunter Update&#10;Code Style">
       <created>1586920609480</created>
@@ -143,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586975682139</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Combination and 3 traceTf">
+      <created>1586979876160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586979876160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +164,8 @@
     <MESSAGE value="Demon Hunter Update" />
     <MESSAGE value="Demon Hunter Update&#10;Code Style" />
     <MESSAGE value="Fixed bug with string sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with string sort" />
+    <MESSAGE value="Combination and 3 traceTf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Combination and 3 traceTf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="180" key="#Notifications" timestamp="1586975143348">
@@ -172,10 +184,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1317" y="228" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1582855747555" />
-    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2" timestamp="1586975671397">
+    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2" timestamp="1586979874700">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586975671397" />
+    <state x="348" y="121" width="1453" height="805" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586979874700" />
     <state width="587" height="466" key="DebuggerActiveHint" timestamp="1586977424938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,22 +216,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="344" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582684416043" />
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom" timestamp="1586979343148">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1587001721918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343148" />
-    <state width="1877" height="321" key="GridCell.Tab.0.center" timestamp="1586979343147">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587001721918" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1587001721918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343147" />
-    <state width="1877" height="321" key="GridCell.Tab.0.left" timestamp="1586979343147">
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587001721918" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1587001721918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343147" />
-    <state width="1877" height="321" key="GridCell.Tab.0.right" timestamp="1586979343148">
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587001721918" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1587001721918">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586979343148" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587001721918" />
     <state width="914" height="344" key="GridCell.Tab.1.bottom" timestamp="1582684413820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -244,18 +256,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1067" y="223" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582682331404" />
-    <state x="417" y="105" key="SettingsEditor" timestamp="1586969613842">
+    <state x="417" y="105" key="SettingsEditor" timestamp="1586997135473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="417" y="105" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586969613842" />
-    <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1586976545511">
+    <state x="417" y="105" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586997135473" />
+    <state x="681" y="261" width="555" height="524" key="StructurePopup" timestamp="1587002353357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1586976545511" />
-    <state x="1031" y="258" key="Vcs.Push.Dialog.v2" timestamp="1586920619665">
+    <state x="681" y="261" width="555" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1587002353357" />
+    <state x="1031" y="258" key="Vcs.Push.Dialog.v2" timestamp="1586979878930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1031" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586920619665" />
+    <state x="1031" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586979878930" />
     <state x="1147" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1582679179427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -268,27 +280,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1180" y="259" key="com.intellij.lang.javascript.flex.projectStructure.ui.ChooseBuildConfigurationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586951246223" />
-    <state width="756" height="433" key="javadoc.popup.new" timestamp="1586977983982">
+    <state width="756" height="328" key="javadoc.popup.new" timestamp="1587000826964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="756" height="433" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1586977983982" />
+    <state width="756" height="328" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1587000826964" />
     <state x="685" y="145" key="new project wizard" timestamp="1582682253470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="685" y="145" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1582682253470" />
-    <state x="1074" y="229" key="search.everywhere.popup" timestamp="1582693778360">
+    <state x="1074" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1586997084706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1074" y="229" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582693778360" />
+    <state x="1074" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586997084706" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="FlashRunConfigurationType">
-        <watch expression="this.matrix" />
-        <watch expression="this.maximumClassMatrix" />
-        <watch expression="this.minimumTotalMatrix" />
-        <watch expression="this.minimumTotalMatrix[&quot;0&quot;].matrix" />
-        <watch expression="this.minimumTotalMatrix[&quot;2&quot;].matrix" />
+        <watch expression="newCombMaxClassDust" />
+        <watch expression="maximumClassDustVector[0].maxClassDust" />
+        <watch expression="newCombTotalDust" />
+        <watch expression="maximumClassDustVector[0].totalDust" />
       </configuration>
     </watches-manager>
   </component>

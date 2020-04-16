@@ -93,3 +93,51 @@
 423 increase last, skip all previous
 431 last max, incr prev + arr
 432 increase last, skip all previous
+
+2 from 4
+
+12 arr
+13 next from bench
+14 next from bench
+
+21 last max, incr prev + arr
+23 next from bench
+24 next from bench
+
+31 last max, incr prev + arr
+32 next from bench
+34 next from bench
+
+41 last max, incr prev + arr
+42 next from bench
+43 next from bench
+
+3 from 5
+
+123 arr
+124 next from bench
+125 next from bench
+132 last max, incr prev + arr
+134
+135
+142 last max, incr prev + arr
+143
+145
+152 last max, incr prev + arr
+153
+154
+
+213 last max, prev max, incr prev2 + arr
+214
+215
+231 last max, incr prev + arr
+234
+235
+241 last max, incr prev + arr
+243
+245
+251 last max, incr prev + arr
+253
+254
+
+312 last max, prev max, incr prev2 + arr

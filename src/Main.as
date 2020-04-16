@@ -6,11 +6,11 @@ import flash.text.TextField;
 import flash.text.TextFormat;
 import flash.utils.getTimer;
 
-import mx.utils.ObjectUtil;
+import utils.Utils;
 
 [SWF(height=900, width=1200)]
 public class Main extends Sprite {
-    private const ACCOUNTS:int = 8;
+    private const ACCOUNTS:int = 7;
     public static const CLASSES:int = 4;
     private const MAXIMUM_DUST:int = int.MAX_VALUE;
     public static var data:Array = [
@@ -36,15 +36,14 @@ public class Main extends Sprite {
     private var matrix:Array = [];
     private var working:Boolean;
 
-    private var minimumTotalScore:Number = Number.MAX_VALUE;
-    private var minimumTotalMatrix:Vector.<Combination> = new Vector.<Combination>();
-    private var maximumClassScore:Number = Number.MAX_VALUE;
-    private var maximumClassMatrix:Vector.<Combination> = new Vector.<Combination>();
+    private var minimumTotalDustVector:Vector.<Combination> = new Vector.<Combination>();
+    private var maximumClassDustVector:Vector.<Combination> = new Vector.<Combination>();
     private var finished:Boolean;
     private var startTime:int;
     private var textFieldLeft:TextField;
     private var textFieldCenter:TextField;
     private var textFieldRight:TextField;
+    private const VECTOR_LIMIT:uint = 7;
 
     public function Main() {
         startTime = getTimer();
@@ -118,15 +117,11 @@ public class Main extends Sprite {
         if (finished) {
             removeEventListener(Event.ENTER_FRAME, onEnterFrame);
 
-            traceTf(">>>Minimum Total Score: " + minimumTotalScore + "\n", LEFT);
-            minimumTotalMatrix = minimumTotalMatrix.splice(minimumTotalMatrix.length - 10, 10);
-            minimumTotalMatrix.reverse();
-            minimumTotalMatrix.forEach(fullTraceLeft);
+            traceTf(">>>Minimum Total Score: " + minimumTotalDustVector[0].totalDust + "\n", LEFT);
+            minimumTotalDustVector.forEach(fullTraceLeft);
 
-            traceTf(">>>Maximum Class Dust: " + maximumClassScore + "\n", CENTER);
-            maximumClassMatrix = maximumClassMatrix.splice(maximumClassMatrix.length - 10, 10);
-            maximumClassMatrix.reverse();
-            maximumClassMatrix.forEach(fullTraceCenter);
+            traceTf(">>>Maximum Class Dust: " + maximumClassDustVector[0].maxClassDust + "\n", CENTER);
+            maximumClassDustVector.forEach(fullTraceCenter);
 
             traceTf("Time: " + (getTimer() - startTime) * 0.001);
         } else if (!working) {
@@ -137,7 +132,8 @@ public class Main extends Sprite {
 //                if(ObjectUtil.compare(matrix,[9,5,6,2,7,4,8,1,0,3,10])==0){//10,5,6,2,7,4,8,1,0,3/9
 //                    trace("dfsdfsdsfds");
 //                }
-                if (i < 20) traceTf(matrix);
+
+                //if (i < 20) traceTf(matrix);
                 writeMatrix(matrix);
             }
             traceTf(matrix.slice(0, CLASSES));
@@ -148,14 +144,14 @@ public class Main extends Sprite {
     private function writeMatrix(value:Array):void {
         if (!value.length) return;
 
-        var totalDust:int = 0;
-        var maxClassDust:int = 0;
+        var newCombTotalDust:int = 0;
+        var newCombMaxClassDust:int = 0;
 
         for (var i:int = 0; i < CLASSES; i++) {
             if (data[value[i]][i] < MAXIMUM_DUST) {
-                totalDust += data[value[i]][i];
-                if (maxClassDust < data[value[i]][i]) {
-                    maxClassDust = data[value[i]][i];
+                newCombTotalDust += data[value[i]][i];
+                if (newCombMaxClassDust < data[value[i]][i]) {
+                    newCombMaxClassDust = data[value[i]][i];
                 }
             } else {
                 //more than maximum = ignore
@@ -163,14 +159,37 @@ public class Main extends Sprite {
             }
         }
 
-        if (totalDust <= minimumTotalScore) {
-            minimumTotalScore = totalDust;
-            minimumTotalMatrix.push(new Combination(totalDust, maxClassDust, value.concat()));
+        if (
+            !minimumTotalDustVector.length ||
+            (newCombTotalDust < minimumTotalDustVector[0].totalDust) ||
+            ( newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust < minimumTotalDustVector[0].maxClassDust)
+        ) {
+            if(minimumTotalDustVector.length >= VECTOR_LIMIT){
+                minimumTotalDustVector.pop();
+            }
+            minimumTotalDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
         }
-        if (maxClassDust <= maximumClassScore) {
-            maximumClassScore = maxClassDust;
-            maximumClassMatrix.push(new Combination(totalDust, maxClassDust, value.concat()));
+
+        if (
+            !maximumClassDustVector.length ||
+            (newCombMaxClassDust < maximumClassDustVector[0].maxClassDust) ||
+            ( newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust < maximumClassDustVector[0].totalDust)
+        ) {
+            if(maximumClassDustVector.length >= VECTOR_LIMIT){
+                maximumClassDustVector.pop();
+            }
+            maximumClassDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
         }
+    }
+
+    private function pushIgnoreClones(vector:Vector.<Combination>, pretender:Combination):void {
+        for each (var combination:Combination in vector) {
+            if (Utils.areArraysEqual(combination.shortMatrix, pretender.shortMatrix)) {
+                return;
+            }
+        }
+
+        vector.push(pretender);
     }
 
     private function tick(array:Array, depth:int = 3):Array {
@@ -196,12 +215,30 @@ public class Main extends Sprite {
         return array;
     }
 
-    private function factorial(n:int):int {
-        var result:int = 1;
-        while (n) {
-            result *= n--;
-        }
-        return result;
-    }
+//    private function minimumTotalDustSort(a:Combination, b:Combination):Number {
+//        var totalDust:Number = a.totalDust - b.totalDust;
+//        if( totalDust == 0 ){
+//            return a.maxClassDust - b.maxClassDust;
+//        }else{
+//            return totalDust;
+//        }
+//    }
+//
+//    private function maximumClassDustSort(a:Combination, b:Combination):Number {
+//        var totalDust:Number = a.maxClassDust - b.maxClassDust;
+//        if( totalDust == 0 ){
+//            return a.totalDust - b.totalDust;
+//        }else{
+//            return totalDust;
+//        }
+//    }
+
+//    private function factorial(n:int):int {
+//        var result:int = 1;
+//        while (n) {
+//            result *= n--;
+//        }
+//        return result;
+//    }
 }
 }

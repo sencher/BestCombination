@@ -31,7 +31,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/Test_Bitmap" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/air" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/alts" />
-      <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/com" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/components" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/composition" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/currentButton" />
@@ -54,7 +53,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/survarium" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/swf" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/transitions" />
-      <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/utils" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/visible" />
       <excludeFolder url="file://$MODULE_DIR$/../tooltips/src/xml" />
     </content>
