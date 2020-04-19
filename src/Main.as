@@ -25,7 +25,7 @@ public class Main extends Sprite {
     private const CENTER:int = 1;
     private const RIGHT:int = 2;
 
-    public static var data:Array = [
+    public static const DATA:Array = [
         [18.8, 27.44, 17.3, 38.8, 2.82, 39.74, 27.6, 7.76, 59.56, 10.68],
         [21.54, 31.82, 15.7, 39.88, 5.04, 37.36, 23.32, 5.66, 64.7, 15.26],
         [20, 30.46, 17.6, 37.66, 3.98, 44.24, 23.92, 5.06, 58.68, 12.96],
@@ -39,16 +39,10 @@ public class Main extends Sprite {
         [23.06, 36.8, 19.44, 56.58, 6.52, 48.5, 30.32, 13.86, 87.08, 19.5]
     ];
 
-//    public static var data:Array = [
-//        [4, 3, 2, 3, 4, 3, 4, 2],
-//        [1, 3, 1, 5, 1, 2, 1, 4],
-//        [0, 1, 9, 1, 2, 1, 7, 1],
-//        [1, 0, 1, 4, 1, 0, 1, 0],
-//        [0, 1, 2, 1, 2, 1, 2, 1],
-//        [1, 4, 1, 0, 1, 2, 1, 3],
-//        [6, 1, 0, 1, 7, 1, 4, 1],
-//        [1, 2, 1, 7, 1, 0, 1, 3]
-//    ];
+    public static var data:Array = [];
+
+    public static const LOOT:Array = [41035, 34745, 32815, 18415, 18080, 17110, 16815, 18890, 20415, 22455, 18545];
+    public static var lootLeft:Array = [];
 
     private var matrix:Array = [];
     private var working:Boolean;
@@ -61,44 +55,33 @@ public class Main extends Sprite {
     private var textFieldCenter:TextField;
     private var textFieldRight:TextField;
     private var depth:int;
+    private var textFormat:TextFormat = new TextFormat();
 
     public function Main() {
         startTime = getTimer();
-        var textFormat:TextFormat = new TextFormat();
         textFormat.size = 20;
-        textFieldLeft = new TextField();
-        textFieldLeft.setTextFormat(textFormat);
-        textFieldLeft.defaultTextFormat = textFormat;
-        textFieldLeft.wordWrap = true;
-        textFieldLeft.width = stage.stageWidth * 0.4;
-        textFieldLeft.height = stage.stageHeight;
-        addChild(textFieldLeft);
+
+        textFieldLeft = createAndAddTextField(0, 0.4);
+        textFieldCenter = createAndAddTextField(0.4, 0.4);
+        textFieldRight = createAndAddTextField(0.8, 0.2);
         stage.focus = textFieldLeft;
-
-        textFieldCenter = new TextField();
-        textFieldCenter.setTextFormat(textFormat);
-        textFieldCenter.defaultTextFormat = textFormat;
-        textFieldCenter.wordWrap = true;
-        textFieldCenter.width = stage.stageWidth * 0.4;
-        textFieldCenter.height = stage.stageHeight;
-        textFieldCenter.x = stage.stageWidth * 0.4;
-        addChild(textFieldCenter);
-
-        textFieldRight = new TextField();
-        textFieldRight.setTextFormat(textFormat);
-        textFieldRight.defaultTextFormat = textFormat;
-        textFieldRight.wordWrap = true;
-        textFieldRight.width = stage.stageWidth * 0.2;
-        textFieldRight.height = stage.stageHeight;
-        textFieldRight.x = stage.stageWidth * 0.8;
-        addChild(textFieldRight);
 
         depth = 1 + ACCOUNTS - CLASSES;
         if (depth < 2) depth = 2;
 
-        for (var i:int = 0; i < data.length; i++) {
-            for (var j:int = 0; j < data[i].length; j++) {
-                data[i][j] = Math.round(data[i][j] * 1000);
+        var currentCell:int;
+        for (var i:int = 0; i < ACCOUNTS; i++) {
+            data[i] = [];
+            lootLeft[i] = [];
+            for (var j:int = 0; j < CLASSES; j++) {
+                currentCell = Math.round(DATA[i][j] * 1000) - LOOT[i];
+                if (currentCell < 0) {
+                    lootLeft[i][j] = -currentCell;
+                    currentCell = 0;
+                } else {
+                    lootLeft[i][j] = 0;
+                }
+                data[i][j] = currentCell;
             }
         }
 
@@ -112,6 +95,18 @@ public class Main extends Sprite {
         }
         tryWriteMatrix(matrix);
         addEventListener(Event.ENTER_FRAME, onEnterFrame);
+    }
+
+    private function createAndAddTextField(xRelativePos:Number, widthRelative:Number):TextField {
+        var tf:TextField = new TextField();
+        tf.setTextFormat(textFormat);
+        tf.defaultTextFormat = textFormat;
+        tf.wordWrap = true;
+        tf.x = stage.stageWidth * xRelativePos;
+        tf.width = stage.stageWidth * widthRelative;
+        tf.height = stage.stageHeight;
+        addChild(tf);
+        return tf;
     }
 
     private function traceTf(value:*, position:int = RIGHT):void {
@@ -137,7 +132,7 @@ public class Main extends Sprite {
         if (finished) {
             removeEventListener(Event.ENTER_FRAME, onEnterFrame);
 
-            traceTf(">>>Minimum Total Score: " + minimumTotalDustVector[0].totalDust + "\n", LEFT);
+            traceTf(">>>Minimum Total Dust: " + minimumTotalDustVector[0].totalDust + "\n", LEFT);
             minimumTotalDustVector.forEach(fullTraceLeft);
 
             traceTf(">>>Maximum Class Dust: " + maximumClassDustVector[0].maxClassDust + "\n", CENTER);
@@ -150,7 +145,6 @@ public class Main extends Sprite {
                 for (var i:int = 0; i < ITERATIONS_PER_FRAME; i++) {
                     if (finished) break;
                     matrix = tick(matrix, depth);
-//                    traceTf(matrix);
                     tryWriteMatrix(matrix);
                 }
             } catch (e:Error) {
@@ -164,14 +158,17 @@ public class Main extends Sprite {
     }
 
     private function tryWriteMatrix(value:Array):void {
+        traceTf(value);
         if (!value.length) return;
 
         var newCombTotalDust:int = 0;
         var newCombMaxClassDust:int = 0;
+        var newCombLootLeft:int = 0;
 
         for (var i:int = 0; i < CLASSES; i++) {
             if (data[value[i]][i] < MAXIMUM_DUST) {
                 newCombTotalDust += data[value[i]][i];
+                newCombLootLeft += lootLeft[value[i]][i];
                 if (newCombMaxClassDust < data[value[i]][i]) {
                     newCombMaxClassDust = data[value[i]][i];
                 }
@@ -184,23 +181,25 @@ public class Main extends Sprite {
         if (
                 !minimumTotalDustVector.length ||
                 (newCombTotalDust < minimumTotalDustVector[0].totalDust) ||
-                (newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust < minimumTotalDustVector[0].maxClassDust)
+                (newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust < minimumTotalDustVector[0].maxClassDust) ||
+                (newCombTotalDust == minimumTotalDustVector[0].totalDust && newCombMaxClassDust == minimumTotalDustVector[0].maxClassDust && newCombLootLeft > minimumTotalDustVector[0].lootLeft)
         ) {
             if (minimumTotalDustVector.length >= VECTOR_LIMIT) {
                 minimumTotalDustVector.pop();
             }
-            minimumTotalDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
+            minimumTotalDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, newCombLootLeft, value.concat()));
         }
 
         if (
                 !maximumClassDustVector.length ||
                 (newCombMaxClassDust < maximumClassDustVector[0].maxClassDust) ||
-                (newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust < maximumClassDustVector[0].totalDust)
+                (newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust < maximumClassDustVector[0].totalDust) ||
+                (newCombMaxClassDust == maximumClassDustVector[0].maxClassDust && newCombTotalDust == maximumClassDustVector[0].totalDust && newCombLootLeft > maximumClassDustVector[0].lootLeft)
         ) {
             if (maximumClassDustVector.length >= VECTOR_LIMIT) {
                 maximumClassDustVector.pop();
             }
-            maximumClassDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, value.concat()));
+            maximumClassDustVector.unshift(new Combination(newCombTotalDust, newCombMaxClassDust, newCombLootLeft, value.concat()));
         }
     }
 

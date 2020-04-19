@@ -93,3 +93,85 @@
 423 increase last, skip all previous
 431 last max, incr prev + arr
 432 increase last, skip all previous
+
+2 from 4
+
+12 arr
+13 next from bench
+14 next from bench
+
+21 last max, incr prev + arr
+23 next from bench
+24 next from bench
+
+31 last max, incr prev + arr
+32 next from bench
+34 next from bench
+
+41 last max, incr prev + arr
+42 next from bench
+43 next from bench
+
+3 from 5
+
+123 arr
+124 next from bench
+125 next from bench
+132 last max, incr prev + arr
+134
+135
+142 last max, incr prev + arr
+143
+145
+152 last max, incr prev + arr
+153
+154
+
+213 last max, prev max, incr prev2 + arr
+214
+215
+231 last max, incr prev + arr
+234
+235
+241 last max, incr prev + arr
+243
+245
+251 last max, incr prev + arr
+253
+254
+
+312 last max, prev max, incr prev2 + arr
+
+7/7 benchSize = 0, depth 2
+6/7 benchSize = 1, depth 2
+5/7 benchSize = 2, depth 3
+4/7 benchSize = 3, depth 4
+3/7 benchSize = 4, depth 5
+2/7 benchSize = 5, depth 6
+1/7 benchSize = 6, depth 7
+
+1 from 7
+
+1 arr
+2 next from bench
+3 next from bench
+4 next from bench
+5 next from bench
+6 next from bench
+7 next from bench
+
+2 from 7
+
+12 arr
+13 next from bench
+14 next from bench
+15 next from bench
+16 next from bench
+17 next from bench
+
+21 last max, incr prev + arr
+23 next from bench
+24 next from bench
+25 next from bench
+26 next from bench
+27 next from bench
